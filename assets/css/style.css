@@ -188,6 +188,18 @@ a:hover {
   min-width: 300px;
 }
 
+.hero-heading {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.hero-logo-inline {
+  max-width: 120px;
+  width: 100%;
+  height: auto;
+}
+
 .hero-text h1 {
   font-size: 2.75rem;
   line-height: 1.2;
@@ -224,14 +236,14 @@ a:hover {
 }
 
 .btn-primary {
-  background-color: var(--accent);
-  color: #ffffff;
+  background-color: #ffffff;
+  color: var(--accent);
   border: 1px solid var(--accent);
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-hover);
-  color: #ffffff;
+  background-color: var(--accent-soft);
+  color: var(--accent-hover);
 }
 
 .btn-secondary {
