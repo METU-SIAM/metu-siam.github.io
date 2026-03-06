@@ -99,8 +99,10 @@ a:hover {
   color: var(--text-main);
 }
 
-.brand-logo {
-  color: var(--accent);
+.brand-logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .brand-text {
@@ -252,26 +254,20 @@ a:hover {
   gap: 1.5rem;
 }
 
-/* Cards & Grids */
+/* Typographic sections (no boxed cards) */
 .card {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
-  box-shadow: var(--shadow-subtle);
-  transition: var(--transition);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
 }
 
-.card:hover {
-  box-shadow: var(--shadow-soft);
-  transform: translateY(-2px);
-}
-
-.card h2, .card h3 {
+.card h2,
+.card h3 {
   margin-top: 0;
-  font-size: 1.25rem;
-  border-bottom: 1px solid var(--border-subtle);
-  padding-bottom: 0.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .list {
