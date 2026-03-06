@@ -99,10 +99,8 @@ a:hover {
   color: var(--text-main);
 }
 
-.brand-logo-img {
-  height: 36px;
-  width: auto;
-  display: block;
+.brand-logo {
+  color: var(--accent);
 }
 
 .brand-text {
@@ -252,6 +250,14 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.hero-logo-img {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Typographic sections (no boxed cards) */
