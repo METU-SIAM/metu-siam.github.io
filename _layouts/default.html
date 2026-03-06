@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,17 +9,44 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">
-        <span class="brand-title">METU SIAM</span>
-        <span class="brand-subtitle">Student Chapter</span>
-      </div>
+      <a href="{{ '/' | relative_url }}" class="brand">
+        <!-- SVG Logo Placeholder -->
+        <svg class="brand-logo" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+          <path d="M2 17l10 5 10-5"></path>
+          <path d="M2 12l10 5 10-5"></path>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-title">METU SIAM</span>
+          <span class="brand-subtitle">Student Chapter</span>
+        </div>
+      </a>
       <nav class="nav">
         <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' or page.url == '/index.html' %}active{% endif %}">Home</a>
         <a href="{{ '/seminars.html' | relative_url }}" class="nav-link {% if page.url contains 'seminars' %}active{% endif %}">Seminars</a>
         <a href="{{ '/workshops.html' | relative_url }}" class="nav-link {% if page.url contains 'workshops' %}active{% endif %}">Workshops</a>
+        <a href="{{ '/python-lectures.html' | relative_url }}" class="nav-link {% if page.url contains 'python-lectures' %}active{% endif %}">Python</a>
         <a href="{{ '/people.html' | relative_url }}" class="nav-link {% if page.url contains 'people' %}active{% endif %}">People</a>
         <a href="{{ '/resources.html' | relative_url }}" class="nav-link {% if page.url contains 'resources' %}active{% endif %}">Resources</a>
-        <button id="theme-toggle" class="nav-link" type="button">Dark / Light</button>
+        
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle Theme">
+          <!-- Moon Icon (for Light Mode, switches to Dark) -->
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <!-- Sun Icon (for Dark Mode, switches to Light) -->
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
       </nav>
     </div>
   </header>
@@ -28,32 +55,43 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> METU SIAM Student Chapter. All rights reserved.</p>
-      <p class="footer-meta">
-        Affiliated with the Society for Industrial and Applied Mathematics (SIAM).
-      </p>
+      <p>&copy; <span id="year"></span> METU SIAM Student Chapter.</p>
+      <p class="footer-meta">Society for Industrial and Applied Mathematics (SIAM).</p>
     </div>
   </footer>
 
   <script>
-    // Year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Theme toggle with localStorage
     (function () {
       var root = document.documentElement;
       var toggleBtn = document.getElementById('theme-toggle');
+      var iconSun = document.querySelector('.icon-sun');
+      var iconMoon = document.querySelector('.icon-moon');
+      
       var saved = window.localStorage ? localStorage.getItem('theme') : null;
-
-      if (saved === 'light' || saved === 'dark') {
-        root.setAttribute('data-theme', saved);
+      var defaultTheme = 'light';
+      var current = saved || defaultTheme;
+      
+      function updateIcons(theme) {
+        if(theme === 'dark') {
+          iconSun.style.display = 'block';
+          iconMoon.style.display = 'none';
+        } else {
+          iconSun.style.display = 'none';
+          iconMoon.style.display = 'block';
+        }
       }
+
+      root.setAttribute('data-theme', current);
+      updateIcons(current);
 
       if (toggleBtn) {
         toggleBtn.addEventListener('click', function () {
-          var current = root.getAttribute('data-theme') || 'dark';
-          var next = current === 'dark' ? 'light' : 'dark';
+          current = root.getAttribute('data-theme') || 'light';
+          var next = current === 'light' ? 'dark' : 'light';
           root.setAttribute('data-theme', next);
+          updateIcons(next);
           if (window.localStorage) {
             localStorage.setItem('theme', next);
           }
