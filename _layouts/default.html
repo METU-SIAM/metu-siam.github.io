@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}METU SIAM Student Chapter</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-title">METU SIAM</span>
+        <span class="brand-subtitle">Student Chapter</span>
+      </div>
+      <nav class="nav">
+        <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' or page.url == '/index.html' %}active{% endif %}">Home</a>
+        <a href="{{ '/seminars.html' | relative_url }}" class="nav-link {% if page.url contains 'seminars' %}active{% endif %}">Seminars</a>
+        <a href="{{ '/workshops.html' | relative_url }}" class="nav-link {% if page.url contains 'workshops' %}active{% endif %}">Workshops</a>
+        <a href="{{ '/python-lectures.html' | relative_url }}" class="nav-link {% if page.url contains 'python-lectures' %}active{% endif %}">Python Lectures</a>
+        <a href="{{ '/people.html' | relative_url }}" class="nav-link {% if page.url contains 'people' %}active{% endif %}">People</a>
+        <a href="{{ '/resources.html' | relative_url }}" class="nav-link {% if page.url contains 'resources' %}active{% endif %}">Resources</a>
+      </nav>
+    </div>
+  </header>
+
+  {{ content }}
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> METU SIAM Student Chapter. All rights reserved.</p>
+      <p class="footer-meta">
+        Affiliated with the Society for Industrial and Applied Mathematics (SIAM).
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
