@@ -1,15 +1,35 @@
 :root {
-  --bg: #0b1020;
-  --bg-elevated: #151a2b;
-  --accent: #ffb347;
-  --accent-soft: rgba(255, 179, 71, 0.16);
-  --text: #f5f5f7;
-  --text-muted: #a0a4b8;
-  --border-subtle: #2a3045;
+  /* Shared tokens */
   --radius-lg: 14px;
   --radius-md: 10px;
   --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.45);
   --shadow-subtle: 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+/* Dark theme – default (METU red + SIAM blue accents) */
+:root[data-theme="dark"] {
+  --bg-main-top: #111827;
+  --bg-main-bottom: #020617;
+  --bg-elevated: #111827;
+  --accent: #a31e37;
+  --accent-alt: #005f9e;
+  --accent-soft: rgba(163, 30, 55, 0.16);
+  --text: #f9fafb;
+  --text-muted: #9ca3af;
+  --border-subtle: #1f2933;
+}
+
+/* Light theme */
+:root[data-theme="light"] {
+  --bg-main-top: #e5e7eb;
+  --bg-main-bottom: #ffffff;
+  --bg-elevated: #ffffff;
+  --accent: #a31e37;
+  --accent-alt: #005f9e;
+  --accent-soft: rgba(163, 30, 55, 0.12);
+  --text: #0f172a;
+  --text-muted: #6b7280;
+  --border-subtle: #e5e7eb;
 }
 
 *,
@@ -23,7 +43,7 @@ html, body {
   padding: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top, #192139 0, #050814 55%);
+  background: radial-gradient(circle at top, var(--bg-main-top) 0, var(--bg-main-bottom) 55%);
   color: var(--text);
 }
 
@@ -126,7 +146,7 @@ a:hover {
 }
 
 .hero-text {
-  background: radial-gradient(circle at top left, #1f2642 0, #101526 60%);
+  background: radial-gradient(circle at top left, rgba(15, 23, 42, 1) 0, rgba(15, 23, 42, 0.85) 60%);
   border-radius: 24px;
   padding: 1.6rem 1.7rem;
   box-shadow: var(--shadow-soft);
@@ -203,7 +223,7 @@ a:hover {
 }
 
 .card {
-  background: linear-gradient(145deg, #14192b, #090d1b);
+  background: linear-gradient(145deg, var(--bg-elevated), rgba(15, 23, 42, 0.94));
   border-radius: var(--radius-lg);
   padding: 1.1rem 1.2rem;
   border: 1px solid rgba(255, 255, 255, 0.04);
@@ -272,7 +292,7 @@ main.markdown {
   margin: 1.4rem auto 3rem;
   padding: 1.4rem 1.6rem 1.6rem;
   border-radius: 20px;
-  background: radial-gradient(circle at top left, #1c2239 0, #090d18 60%);
+  background: radial-gradient(circle at top left, rgba(15, 23, 42, 1) 0, rgba(15, 23, 42, 0.9) 60%);
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: var(--shadow-soft);
 }
