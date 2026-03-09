@@ -326,9 +326,34 @@ a:hover {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
+/* Event cards (used on home or seminars if needed) */
 .event-card {
   border-top: 2px solid var(--accent-soft);
   padding-top: 1rem;
+}
+
+.event-card-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.event-image-wrapper {
+  flex: 0 0 220px;
+  max-width: 100%;
+}
+
+.event-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  display: block;
+}
+
+.event-content {
+  flex: 1 1 260px;
 }
 
 .event-meta {
@@ -366,14 +391,18 @@ a:hover {
   margin-bottom: 0.75rem;
 }
 
-.events-calendar-wrapper {
-  margin-top: 2.5rem;
+.hero-calendar {
+  margin-top: 1.5rem;
 }
 
-.events-calendar-title {
+.hero-calendar-title {
   margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
 }
 
 /* Footer */
