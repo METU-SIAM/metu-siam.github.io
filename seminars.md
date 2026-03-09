@@ -23,6 +23,14 @@ scientific computing, data science, and related areas.
   </p>
   <div class="featured-actions">
     <a href="{{ '/' | relative_url }}" class="btn btn-secondary">View Calendar</a>
+    <a
+      href="https://calendar.google.com/calendar/embed?src=aWFtbWV0dTIwMDJAZ21haWwuY29t&ctz=Europe%2FIstanbul"
+      class="btn btn-ghost"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Add to your calendar
+    </a>
   </div>
 </section>
 
@@ -53,7 +61,7 @@ scientific computing, data science, and related areas.
           <strong>Venue:</strong> Institute of Applied Mathematics (IAM), Hayri Körezlioğlu Seminar Room (S-212)
         </p>
         <details class="event-abstract">
-          <summary>Abstract ▼</summary>
+          <summary>Abstract </summary>
           <p>
             Rapidly evolving high performance computing resources result in an exponential
             increase in data storage demands. Scientific data compression is a much cheaper alternative to constantly
@@ -75,7 +83,7 @@ scientific computing, data science, and related areas.
       </div>
     </div>
   </div>
-
+image.png
   <div class="event-card">
     <div class="event-card-inner">
       <div class="event-image-wrapper">
