@@ -5,8 +5,7 @@ layout: page
 
 # Seminars
 
-METU SIAM Student Chapter organizes a seminar series on topics in applied mathematics,
-scientific computing, data science, and related areas.
+Empty placeholder for seminars page.
 
 ## Upcoming Events
 
@@ -27,7 +26,7 @@ Upcoming seminars will be announced here.
     <div class="event-content">
       <div class="event-meta">
         <span class="event-type">Seminar</span>
-        <span class="event-date">December 12, 2025 &middot; 14:30–15:30</span>
+        <span class="event-date">December 11, 2025 &middot; 14:30–15:30</span>
       </div>
       <h3 id="whither-data-2025-12-12" class="event-title">
         Whither data? Scientific computing and compression in the exascale era

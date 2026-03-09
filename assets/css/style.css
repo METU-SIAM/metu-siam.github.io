@@ -333,6 +333,7 @@ a:hover {
   background-color: var(--bg-elevated);
   box-shadow: var(--shadow-soft);
   border: 1px solid var(--border-subtle);
+  margin-top: 2rem;
 }
 
 .event-card-inner {
@@ -356,6 +357,10 @@ a:hover {
 
 .event-content {
   flex: 1 1 auto;
+}
+
+.event-content p {
+  font-size: 0.95rem;
 }
 
 .event-meta {
