@@ -54,7 +54,7 @@ layout: page
           <strong>Venue:</strong> Institute of Applied Mathematics (IAM), Hayri Körezlioğlu Seminar Room (S-212)
         </p>
         <details class="event-abstract">
-          <summary>Abstract ▼</summary>
+          <summary>Abstract </summary>
           <p>
             Rapidly evolving high performance computing resources result in an exponential
             increase in data storage demands. Scientific data compression is a much cheaper alternative to constantly
