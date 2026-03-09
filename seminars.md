@@ -2,24 +2,17 @@
 title: Seminars
 layout: page
 ---
-
-# Seminars
-
-METU SIAM Student Chapter organizes a regular seminar series on topics in applied mathematics,
-scientific computing, data science, and related areas.
-
 ## Upcoming Seminar
 
 <!-- markdownlint-disable MD033 -->
 <section class="featured-seminar">
   <div class="featured-meta">
     <span class="featured-badge">Upcoming</span>
-    <span>No upcoming seminar scheduled yet. Stay tuned for announcements.</span>
+    <span>No upcoming seminar scheduled yet.</span>
   </div>
-  <h2 class="featured-title">To be announced</h2>
+  <h2 class="featured-title">Temp Title</h2>
   <p>
-    New seminars will appear here with speaker, title, date, location, and quick links. In the
-    meantime, you can browse past seminars below or check the events calendar on the home page.
+    New seminars will appear here with speaker, title, date, location, and quick links. 
   </p>
   <div class="featured-actions">
     <a href="{{ '/' | relative_url }}" class="btn btn-secondary">View Calendar</a>
@@ -61,7 +54,7 @@ scientific computing, data science, and related areas.
           <strong>Venue:</strong> Institute of Applied Mathematics (IAM), Hayri Körezlioğlu Seminar Room (S-212)
         </p>
         <details class="event-abstract">
-          <summary>Abstract </summary>
+          <summary>Abstract ▼</summary>
           <p>
             Rapidly evolving high performance computing resources result in an exponential
             increase in data storage demands. Scientific data compression is a much cheaper alternative to constantly
@@ -83,7 +76,6 @@ scientific computing, data science, and related areas.
       </div>
     </div>
   </div>
-image.png
   <div class="event-card">
     <div class="event-card-inner">
       <div class="event-image-wrapper">
