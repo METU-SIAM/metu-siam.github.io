@@ -85,5 +85,3 @@ Upcoming seminars will be announced here.
   </div>
 </div>
 <!-- markdownlint-enable MD033 -->
-
-
