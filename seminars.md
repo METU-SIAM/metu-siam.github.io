@@ -14,7 +14,7 @@ scientific computing, data science, and related areas.
 <section class="featured-seminar">
   <div class="featured-meta">
     <span class="featured-badge">Upcoming</span>
-    <span>No upcoming seminar is currently scheduled.</span>
+    <span>No upcoming seminar scheduled yet. Stay tuned for announcements.</span>
   </div>
   <h2 class="featured-title">To be announced</h2>
   <p>
@@ -23,17 +23,13 @@ scientific computing, data science, and related areas.
   </p>
   <div class="featured-actions">
     <a href="{{ '/' | relative_url }}" class="btn btn-secondary">View Calendar</a>
-    <button class="btn btn-ghost" type="button" disabled>Add to Calendar</button>
-    <button class="btn btn-ghost" type="button" disabled>Registration</button>
   </div>
 </section>
 
 ## Past Seminars
 
-<section class="events-year">
-  <h2 class="events-year-heading">2025</h2>
-  <div class="events-grid">
-    <div class="event-card">
+<div class="events-grid">
+  <div class="event-card">
   <div class="event-card-inner">
     <div class="event-image-wrapper">
       <img
@@ -57,7 +53,7 @@ scientific computing, data science, and related areas.
         <strong>Venue:</strong> Institute of Applied Mathematics (IAM), Hayri Körezlioğlu Seminar Room (S-212)
       </p>
       <details class="event-abstract">
-        <summary>Abstract</summary>
+        <summary>Abstract ▼</summary>
         <p>
           Rapidly evolving high performance computing resources result in an exponential
           increase in data storage demands. Scientific data compression is a much cheaper alternative to constantly
@@ -76,15 +72,9 @@ scientific computing, data science, and related areas.
           We provide illustrative examples from experimental and computational data.
         </p>
       </details>
-    </div>
   </div>
-</div>
-</section>
 
-<section class="events-year">
-  <h2 class="events-year-heading">2024</h2>
-  <div class="events-grid">
-    <div class="event-card">
+  <div class="event-card">
       <div class="event-card-inner">
         <div class="event-image-wrapper">
           <img
@@ -111,5 +101,5 @@ scientific computing, data science, and related areas.
       </div>
     </div>
   </div>
-</section>
+</div>
 <!-- markdownlint-enable MD033 -->

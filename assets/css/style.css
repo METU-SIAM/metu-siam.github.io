@@ -348,8 +348,8 @@ a:hover {
 
 .event-image {
   width: 100%;
-  height: 280px;
-  max-height: 50vh;
+  height: 220px;
+  max-height: 40vh;
   border-radius: var(--radius-md);
   object-fit: cover;
   display: block;
@@ -463,7 +463,7 @@ a:hover {
 .events-grid {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
 }
 
 .event-abstract summary {
@@ -471,6 +471,10 @@ a:hover {
   font-weight: 500;
   color: var(--accent);
   margin-bottom: 0.25rem;
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background-color: var(--accent-soft);
 }
 
 .event-abstract[open] summary {
@@ -489,6 +493,20 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
+}
+
+@media (min-width: 900px) {
+  .event-card-inner {
+    flex-direction: row;
+  }
+
+  .event-image-wrapper {
+    flex: 0 0 40%;
+  }
+
+  .event-content {
+    flex: 1 1 60%;
+  }
 }
 
 /* Footer */
