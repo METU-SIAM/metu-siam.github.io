@@ -328,32 +328,34 @@ a:hover {
 
 /* Event cards (used on home or seminars if needed) */
 .event-card {
-  border-top: 2px solid var(--accent-soft);
-  padding-top: 1rem;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  background-color: var(--bg-elevated);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-subtle);
 }
 
 .event-card-inner {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 .event-image-wrapper {
-  flex: 0 0 220px;
-  max-width: 100%;
+  width: 100%;
 }
 
 .event-image {
   width: 100%;
-  height: auto;
+  height: 280px;
+  max-height: 50vh;
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-soft);
+  object-fit: cover;
   display: block;
 }
 
 .event-content {
-  flex: 1 1 260px;
+  flex: 1 1 auto;
 }
 
 .event-meta {
