@@ -58,6 +58,33 @@ Upcoming seminars will be announced here.
     </div>
   </div>
 </div>
+
+<div class="event-card">
+  <div class="event-card-inner">
+    <div class="event-image-wrapper">
+      <img
+        src="{{ '/assets/seminar/bagce-seminar.jpg' | relative_url }}"
+        alt="Sanremo'lu Bir Cizvit seminar poster"
+        class="event-image"
+      />
+    </div>
+    <div class="event-content">
+      <div class="event-meta">
+        <span class="event-type">Seminar</span>
+        <span class="event-date">December 12, 2024 &middot; 14:30–15:30</span>
+      </div>
+      <h3 id="bagce-2024-12-12" class="event-title">
+        Sanremo’lu Bir Cizvit Giovanni Girolamo Saccheri (1667–1733) ve Euclides’i
+      </h3>
+      <p class="event-speaker">
+        <strong>Speaker:</strong> Samet Bağçe (Department of Philosophy, METU)
+      </p>
+      <p class="event-venue">
+        <strong>Venue:</strong> Institute of Applied Mathematics (IAM), Hayri Körezlioğlu Seminar Room (S-212)
+      </p>
+    </div>
+  </div>
+</div>
 <!-- markdownlint-enable MD033 -->
 
 
