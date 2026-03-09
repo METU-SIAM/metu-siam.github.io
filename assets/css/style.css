@@ -366,6 +366,16 @@ a:hover {
   margin-bottom: 0.75rem;
 }
 
+.events-calendar-wrapper {
+  margin-top: 2.5rem;
+}
+
+.events-calendar-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
 /* Footer */
 .site-footer {
   text-align: center;
@@ -455,6 +465,52 @@ a:hover {
   font-family: var(--font-serif);
   color: var(--text-main);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+/* People page */
+.people-grid {
+  display: grid;
+  gap: 2.5rem;
+  margin-top: 1rem;
+}
+
+.people-section h2 {
+  margin-top: 0;
+}
+
+.people-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.people-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.people-list li:last-child {
+  border-bottom: none;
+}
+
+.people-role {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.people-name {
+  display: inline-block;
+  font-weight: 500;
+  margin-right: 0.25rem;
+}
+
+.people-email {
+  display: inline-block;
+  font-size: 0.9rem;
 }
 
 /* Responsive */

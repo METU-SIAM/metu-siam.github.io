@@ -8,7 +8,11 @@ layout: page
 METU SIAM Student Chapter organizes a seminar series on topics in applied mathematics,
 scientific computing, data science, and related areas.
 
-## Upcoming Seminar
+## Upcoming Events
+
+Upcoming seminars will be announced here.
+
+## Past Events
 
 ### Whither data? Scientific computing and compression in the exascale era {#whither-data-2025-12-12}
 
