@@ -11,7 +11,7 @@
 
 /* Light theme - Academic & Elegant */
 :root[data-theme="light"] {
-  --bg-main: #FAFAFA;
+  --bg-main: #FFFFFF;
   --bg-elevated: #FFFFFF;
   --accent: #8b1c31; /* METU Red variant */
   --accent-hover: #691323;
@@ -192,6 +192,15 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+}
+
+.hero-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-subtitle {
+  margin-top: 0;
 }
 
 .hero-logo-inline {
