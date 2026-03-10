@@ -3,8 +3,26 @@ title: Workshops
 layout: page
 ---
 
-# Workshops
+Upcoming workshops and materials will be listed here. 
 
-METU SIAM Student Chapter organizes hands-on workshops on topics such as ...
+## Upcoming Workshop
 
-Upcoming workshops and materials will be listed here.
+<!-- markdownlint-disable MD033 -->
+<section class="featured-seminar">
+  <div class="featured-meta">
+    <span class="featured-badge">Workshop</span>
+    <span>Test workshop for the workshops page.</span>
+  </div>
+  <h2 class="featured-title">test workshop</h2>
+  <p>
+    This is a test workshop for the workshops page.
+  </p>
+  <p>
+    <strong>Date:</strong> March XX, 20XX · 14:00–16:00<br />
+    <strong>Venue:</strong> Test Venue
+  </p>
+</section>
+
+## Past Workshops
+
+Past workshops and materials will be listed here.

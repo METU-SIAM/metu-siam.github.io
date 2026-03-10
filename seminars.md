@@ -10,7 +10,7 @@ layout: page
     <span class="featured-badge">Upcoming</span>
     <span>No upcoming seminar scheduled yet.</span>
   </div>
-  <h2 class="featured-title">Temp Title</h2>
+  <h2 class="featured-title">Temp title name for upcoming seminar</h2>
   <p>
     New seminars will appear here with speaker, title, date, location, and quick links. 
   </p>
