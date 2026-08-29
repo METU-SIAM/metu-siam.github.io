@@ -1,0 +1,36 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="footer-brand">METU SIAM Student Chapter</p>
+      <p class="footer-copy">
+        Institute of Applied Mathematics,<br />
+        Middle East Technical University.
+      </p>
+      <p class="footer-meta">
+        &copy; <span id="year"></span> METU SIAM Student Chapter.
+        Society for Industrial and Applied Mathematics.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h2>Explore</h2>
+      <ul class="footer-list">
+        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+        <li><a href="{{ '/join/' | relative_url }}">Join the chapter</a></li>
+        <li><a href="{{ '/resources/' | relative_url }}">Resources</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h2>Follow</h2>
+      <ul class="footer-list">
+        {% for item in site.data.site.social %}
+          <li><a href="{{ item.url }}" rel="noopener noreferrer">{{ item.label }}</a></li>
+        {% endfor %}
+        <li><a href="mailto:{{ site.data.site.email }}">{{ site.data.site.email }}</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

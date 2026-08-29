@@ -1,0 +1,27 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.title | xml_escape }}</title>
+    <description>{{ site.description | xml_escape }}</description>
+    <link>{{ site.url }}{{ site.baseurl }}/</link>
+    <atom:link href="{{ '/feed.xml' | absolute_url }}" rel="self" type="application/rss+xml"/>
+    <language>en</language>
+    {% assign items = site.seminars %}
+    {% if site.workshops.size > 0 %}
+      {% assign items = site.seminars | concat: site.workshops %}
+    {% endif %}
+    {% assign items = items | sort: "date" | reverse %}
+    {% for event in items limit: 20 %}
+    <item>
+      <title>{{ event.title | xml_escape }}</title>
+      <link>{{ site.url }}{{ site.baseurl }}/{% if event.kind == 'workshop' %}workshops{% else %}seminars{% endif %}/#{{ event.date | date: '%Y-%m-%d' }}-{{ event.speaker | slugify }}</link>
+      <guid isPermaLink="false">{{ event.relative_path }}</guid>
+      <pubDate>{{ event.date | date: '%a, %d %b %Y 12:00:00 +0300' }}</pubDate>
+      <description>{{ event.speaker | xml_escape }}{% if event.affiliation %} · {{ event.affiliation | xml_escape }}{% endif %}{% if event.venue %} — {{ event.venue | xml_escape }}{% endif %}</description>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

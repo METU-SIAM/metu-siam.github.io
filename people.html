@@ -1,0 +1,41 @@
+---
+title: People
+layout: page
+wide: true
+description: Faculty advisors, departmental advisors, and student officers of the METU SIAM Student Chapter.
+redirect_from:
+  - /people.html
+---
+<p class="section-kicker">The chapter</p>
+<h1 class="page-title">People</h1>
+<p class="lede">
+  Faculty and departmental advisors sit with a student officer team. For
+  general inquiries use
+  <a href="mailto:{{ site.data.site.email }}">{{ site.data.site.email }}</a>.
+</p>
+
+<div class="people-page">
+  <section aria-labelledby="faculty-advisors">
+    <header>
+      <h2 id="faculty-advisors">Faculty advisors</h2>
+      <p class="people-section-subtitle">Academic guidance and chapter oversight.</p>
+    </header>
+    {% include people-list.html people=site.data.people.faculty_advisors %}
+  </section>
+
+  <section aria-labelledby="departmental-advisors">
+    <header>
+      <h2 id="departmental-advisors">Departmental advisors</h2>
+      <p class="people-section-subtitle">Support across departments and research areas.</p>
+    </header>
+    {% include people-list.html people=site.data.people.departmental_advisors %}
+  </section>
+
+  <section aria-labelledby="student-officers">
+    <header>
+      <h2 id="student-officers">Student officers</h2>
+      <p class="people-section-subtitle">Student leadership and operations.</p>
+    </header>
+    {% include people-list.html people=site.data.people.student_officers %}
+  </section>
+</div>

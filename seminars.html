@@ -1,0 +1,49 @@
+---
+title: Seminars
+layout: page
+wide: true
+description: Seminar series of the METU SIAM Student Chapter — upcoming talks and the archive.
+redirect_from:
+  - /seminars.html
+---
+{% assign upcoming = site.seminars | where: "status", "upcoming" | sort: "date" %}
+{% assign past = site.seminars | where: "status", "past" | sort: "date" | reverse %}
+
+<p class="section-kicker">Seminar series</p>
+<h1 class="page-title">Seminars</h1>
+<p class="lede">
+  Talks in applied mathematics, computation, and neighbouring fields, usually
+  in the Hayri Körezlioğlu Seminar Room at the Institute of Applied Mathematics.
+  Subscribe to the chapter calendar, or browse the archive below.
+</p>
+<div class="btn-row toolbar">
+  {% include calendar-links.html %}
+</div>
+
+<h2>Upcoming</h2>
+{% if upcoming.size > 0 %}
+  {% for event in upcoming %}
+    {% include event.html event=event featured=true show_poster=true %}
+  {% endfor %}
+{% else %}
+  <div class="featured-empty">
+    <p>No upcoming seminar is scheduled yet. The latest talk is in the archive.</p>
+  </div>
+{% endif %}
+
+<h2>Archive</h2>
+{% assign grouped = past | group_by_exp: "event", "event.date | date: '%Y'" %}
+{% for year_group in grouped %}
+  <div class="events-year">
+    <h3 class="events-year-heading">{{ year_group.name }}</h3>
+    <div class="event-list">
+      {% for event in year_group.items %}
+        {% include event.html event=event show_poster=true %}
+      {% endfor %}
+    </div>
+  </div>
+{% endfor %}
+
+{% if past.size == 0 %}
+  <p class="lede">Past seminars will be listed here.</p>
+{% endif %}

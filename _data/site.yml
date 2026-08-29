@@ -1,0 +1,36 @@
+name: METU SIAM Student Chapter
+short_name: METU SIAM
+email: siam@metu.edu.tr
+founded: 2004
+address_lines:
+  - METU Student Chapter of SIAM
+  - Institute of Applied Mathematics
+  - Middle East Technical University
+  - 06800 Ankara, Turkey
+calendar_src: aWFtbWV0dTIwMDJAZ21haWwuY29t
+# Create a form at https://formspree.io and paste the form id (e.g. xyzabcde).
+# Until then, the contact form opens a prefilled email.
+formspree_form_id: ""
+social:
+  - label: Instagram
+    handle: siam_metu
+    url: https://www.instagram.com/siam_metu
+  - label: LinkedIn
+    handle: METU SIAM Student Chapter
+    url: https://www.linkedin.com/in/metu-siam-student-chapter-4a88b8198
+  - label: X
+    handle: MetuSiam
+    url: https://twitter.com/MetuSiam
+  - label: Facebook
+    handle: siammetu
+    url: https://www.facebook.com/siammetu
+links:
+  siam: https://www.siam.org
+  siam_membership: https://my.siam.org
+  siam_students: https://www.siam.org/students-education/students
+  siam_chapters: https://www.siam.org/students-education/student-chapters
+  siam_journals: https://epubs.siam.org
+  iam: https://iam.metu.edu.tr
+  iam_en: https://iam.metu.edu.tr/en
+  metu: https://www.metu.edu.tr
+  kdd: https://kdd.metu.edu.tr

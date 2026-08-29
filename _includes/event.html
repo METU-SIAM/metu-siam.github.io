@@ -1,0 +1,67 @@
+{% assign event = include.event %}
+{% assign featured = include.featured | default: false %}
+{% assign show_poster = include.show_poster | default: false %}
+{% capture event_id %}{{ event.date | date: '%Y-%m-%d' }}-{{ event.speaker | slugify }}{% endcapture %}
+
+{% if featured %}
+<article class="featured" id="{{ event_id }}">
+  <div class="featured-meta">
+    <span class="featured-badge">{% if event.status == 'upcoming' %}Upcoming{% else %}Latest{% endif %}</span>
+    <span>{{ event.kind | default: 'seminar' }}</span>
+    <time datetime="{{ event.date | date: '%Y-%m-%d' }}">{{ event.date | date: '%B %d, %Y' }}{% if event.time %} · {{ event.time }}{% endif %}</time>
+  </div>
+  <h2 class="featured-title">{{ event.title }}</h2>
+  {% if event.speaker %}
+    <p class="featured-speaker"><strong>{{ event.speaker }}</strong>{% if event.affiliation %} · {{ event.affiliation }}{% endif %}</p>
+  {% endif %}
+  {% if event.venue %}
+    <p class="featured-venue">{{ event.venue }}</p>
+  {% endif %}
+  {% if event.content != blank %}
+    {% unless include.teaser %}
+    <div class="prose">{{ event.content }}</div>
+    {% endunless %}
+  {% endif %}
+  <div class="btn-row">
+    <a class="btn btn-ghost" href="{{ include.archive_url | default: '/seminars/' | relative_url }}">Full listing</a>
+    {% include calendar-links.html %}
+  </div>
+  {% if show_poster and event.poster %}
+    <figure class="featured-poster">
+      <img src="{{ event.poster | relative_url }}" alt="Poster for {{ event.title }}">
+    </figure>
+  {% endif %}
+</article>
+{% else %}
+<article class="event" id="{{ event_id }}">
+  <div class="event-when">
+    <time datetime="{{ event.date | date: '%Y-%m-%d' }}">
+      <span class="event-day">{{ event.date | date: '%d' }}</span>
+      <span class="event-month">{{ event.date | date: '%b' }}</span>
+      <span class="event-year">{{ event.date | date: '%Y' }}</span>
+    </time>
+    {% if event.time %}<span class="event-time">{{ event.time }}</span>{% endif %}
+  </div>
+  <div class="event-body">
+    <span class="event-kind">{{ event.kind | default: 'seminar' }}</span>
+    <h3 class="event-title">{{ event.title }}</h3>
+    {% if event.speaker %}
+      <p class="event-speaker">{{ event.speaker }}{% if event.affiliation %} · {{ event.affiliation }}{% endif %}</p>
+    {% endif %}
+    {% if event.venue %}
+      <p class="event-venue">{{ event.venue }}</p>
+    {% endif %}
+    {% if event.content != blank %}
+      <details class="event-abstract">
+        <summary>Abstract</summary>
+        <div class="abstract-body">{{ event.content }}</div>
+      </details>
+    {% endif %}
+    {% if show_poster and event.poster %}
+      <figure class="event-poster">
+        <img src="{{ event.poster | relative_url }}" alt="Poster for {{ event.title }}">
+      </figure>
+    {% endif %}
+  </div>
+</article>
+{% endif %}

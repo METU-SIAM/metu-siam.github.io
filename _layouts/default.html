@@ -1,101 +1,52 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }} | {% endif %}METU SIAM Student Chapter</title>
+  {% if page.layout == 'default' and page.title == 'Home' %}
+    <title>{{ site.title }}</title>
+  {% else %}
+    <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  {% endif %}
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+  <link rel="icon" href="{{ '/assets/images/metu-siam-logo.png' | relative_url }}" type="image/png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ site.logo | absolute_url }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}">
+  <meta name="twitter:description" content="{{ page.description | default: site.description | escape }}">
+  <meta name="twitter:image" content="{{ site.logo | absolute_url }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="{{ '/' | relative_url }}" class="brand">
-        <!-- Stacked-layers icon in header -->
-        <svg class="brand-logo" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-          <path d="M2 17l10 5 10-5"></path>
-          <path d="M2 12l10 5 10-5"></path>
-        </svg>
-        <div class="brand-text">
-          <span class="brand-title">METU SIAM</span>
-          <span class="brand-subtitle">Student Chapter</span>
-        </div>
-      </a>
-      <nav class="nav">
-        <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' or page.url == '/index.html' %}active{% endif %}">Home</a>
-        <a href="{{ '/seminars.html' | relative_url }}" class="nav-link {% if page.url contains 'seminars' %}active{% endif %}">Seminars</a>
-        <a href="{{ '/workshops.html' | relative_url }}" class="nav-link {% if page.url contains 'workshops' %}active{% endif %}">Workshops</a>
-        <a href="{{ '/people.html' | relative_url }}" class="nav-link {% if page.url contains 'people' %}active{% endif %}">People</a>
-        
-        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle Theme">
-          <!-- Moon Icon (for Light Mode, switches to Dark) -->
-          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-          <!-- Sun Icon (for Dark Mode, switches to Light) -->
-          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-        </button>
-      </nav>
-    </div>
-  </header>
-
-  {{ content }}
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> METU SIAM Student Chapter.</p>
-      <p class="footer-meta">Society for Industrial and Applied Mathematics (SIAM).</p>
-    </div>
-  </footer>
-
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
     (function () {
-      var root = document.documentElement;
-      var toggleBtn = document.getElementById('theme-toggle');
-      var iconSun = document.querySelector('.icon-sun');
-      var iconMoon = document.querySelector('.icon-moon');
-      
-      var saved = window.localStorage ? localStorage.getItem('theme') : null;
-      var defaultTheme = 'light';
-      var current = saved || defaultTheme;
-      
-      function updateIcons(theme) {
-        if(theme === 'dark') {
-          iconSun.style.display = 'block';
-          iconMoon.style.display = 'none';
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") {
+          document.documentElement.setAttribute("data-theme", t);
         } else {
-          iconSun.style.display = 'none';
-          iconMoon.style.display = 'block';
+          document.documentElement.setAttribute("data-theme", "light");
         }
-      }
-
-      root.setAttribute('data-theme', current);
-      updateIcons(current);
-
-      if (toggleBtn) {
-        toggleBtn.addEventListener('click', function () {
-          current = root.getAttribute('data-theme') || 'light';
-          var next = current === 'light' ? 'dark' : 'light';
-          root.setAttribute('data-theme', next);
-          updateIcons(next);
-          if (window.localStorage) {
-            localStorage.setItem('theme', next);
-          }
-        });
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "light");
       }
     })();
   </script>
+</head>
+<body>
+  {% include header.html %}
+  {{ content }}
+  {% include footer.html %}
+  <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
 </body>
 </html>
