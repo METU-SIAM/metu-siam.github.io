@@ -1,6 +1,9 @@
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-vendor/
-.bundle/
+# Next.js
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+# copied from content/ by scripts/copy-content-assets.mjs
+public/seminars/
+public/workshops/

@@ -1,0 +1,50 @@
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 3rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.meta {
+  margin: 0;
+}
+
+.meta dt {
+  margin-top: 1.4rem;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.meta dt:first-child {
+  margin-top: 0;
+}
+
+.meta dd {
+  margin: 0.4rem 0 0;
+}
+
+.meta address {
+  font-style: normal;
+  color: var(--ink-muted);
+}
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+}
+
+.formHead {
+  margin-bottom: 1.25rem;
+  font-size: 1.6rem;
+}

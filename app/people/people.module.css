@@ -1,0 +1,16 @@
+.group {
+  padding: 1.25rem 0 2.25rem;
+}
+
+.head {
+  margin-bottom: 1.1rem;
+}
+
+.head h2 {
+  font-size: 1.5rem;
+}
+
+.head p {
+  margin-top: 0.25rem;
+  color: var(--ink-muted);
+}

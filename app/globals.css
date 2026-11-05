@@ -1,0 +1,325 @@
+/* Tokens. Palette: chapter navy, the logo's blue (#1667A8) and a gold accent;
+   see design-system/metu-siam/MASTER.md. Every text pair below is ≥ 4.5:1. */
+:root {
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --surface-2: #eef2f8;
+  --ink: #0f172a;
+  --ink-muted: #475569;
+  --ink-faint: #5b6a7f;
+  --navy: #0f2a4a;
+  --navy-ink: #e8eef7;
+  --navy-muted: #a9bad1;
+  --blue: #1667a8;
+  --blue-soft: rgba(22, 103, 168, 0.1);
+  --gold: #965c06;
+  --gold-soft: rgba(150, 92, 6, 0.12);
+  --border: #d6dee9;
+  --border-strong: #b6c3d5;
+  --ring: #1667a8;
+  --shadow-sm: 0 1px 2px rgba(15, 42, 74, 0.06);
+  --shadow-md: 0 6px 20px -8px rgba(15, 42, 74, 0.25);
+  --radius: 14px;
+  --radius-sm: 8px;
+  --page: min(1160px, calc(100% - 2.5rem));
+  --prose: 68ch;
+  --header-h: 68px;
+  --font-heading: var(--font-outfit), "Outfit", system-ui, sans-serif;
+  --font-body: var(--font-rubik), "Rubik", system-ui, sans-serif;
+  /* talk titles: the one academic serif on the site */
+  --font-serif: var(--font-source-serif), "Source Serif 4", Georgia, serif;
+  /* motion tokens */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 160ms;
+  --dur: 260ms;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #0a1424;
+  --surface: #0f1d33;
+  --surface-2: #142641;
+  --ink: #e6edf7;
+  --ink-muted: #a8b6cb;
+  --ink-faint: #8596ae;
+  --navy: #081120;
+  --navy-ink: #e6edf7;
+  --navy-muted: #9fb0c8;
+  --blue: #6aaee6;
+  --blue-soft: rgba(106, 174, 230, 0.14);
+  --gold: #e2a944;
+  --gold-soft: rgba(226, 169, 68, 0.14);
+  --border: #213552;
+  --border-strong: #2f4a6e;
+  --ring: #6aaee6;
+  --shadow-sm: none;
+  --shadow-md: 0 8px 24px -10px rgba(0, 0, 0, 0.6);
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 1rem);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color var(--dur) var(--ease-out), color var(--dur) var(--ease-out);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--blue);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: var(--blue-soft);
+}
+
+.container {
+  width: var(--page);
+  margin: 0 auto;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--navy);
+  color: var(--navy-ink);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* shared page furniture */
+
+.kicker {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.page-head {
+  padding: 3.5rem 0 2rem;
+}
+
+.page-title {
+  margin-top: 0.5rem;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 700;
+}
+
+.lede {
+  max-width: 62ch;
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  color: var(--ink-muted);
+}
+
+.section {
+  padding: 3.5rem 0;
+}
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  margin-bottom: 1.75rem;
+}
+
+.section-head h2 {
+  margin-top: 0.4rem;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.link-arrow svg {
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.link-arrow:hover svg {
+  transform: translateX(3px);
+}
+
+/* buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.6rem 1.15rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: #fff;
+}
+
+[data-theme="dark"] .btn-primary {
+  color: #1a1206;
+}
+
+.btn-primary:hover {
+  background: color-mix(in srgb, var(--gold) 86%, black);
+  color: #fff;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  background: color-mix(in srgb, var(--gold) 86%, white);
+  color: #1a1206;
+}
+
+.btn-ghost {
+  border-color: var(--border-strong);
+  background: transparent;
+  color: var(--ink);
+}
+
+.btn-ghost:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* prose (about page, abstracts) */
+
+.prose {
+  max-width: var(--prose);
+  font-size: 1.0625rem;
+  color: var(--ink-muted);
+}
+
+.prose > * + * {
+  margin-top: 1em;
+}
+
+.prose h2 {
+  margin-top: 2em;
+  font-size: 1.5rem;
+  color: var(--ink);
+}
+
+.prose strong {
+  color: var(--ink);
+}
+
+.prose ul {
+  padding-left: 1.25rem;
+}
+
+.prose li + li {
+  margin-top: 0.4em;
+}
+
+.prose img {
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
