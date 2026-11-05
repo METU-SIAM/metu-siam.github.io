@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { calendarUrls, site, type Person } from "@/lib/content";
 import { Icon } from "./Icon";
+import { RiseLines, Rule } from "./Motion";
 import { Reveal } from "./Reveal";
 import styles from "./Blocks.module.css";
 
@@ -32,7 +33,7 @@ export function JoinSteps() {
     },
     {
       title: "Write to us",
-      body: "Tell us you would like to join — seminars, workshops, and chapter mail go out from the officers. We welcome students and faculty from mathematics, statistics, computer science, engineering, economics, physics, and neighbouring fields.",
+      body: "Tell us you would like to join. Seminars, workshops, and chapter mail go out from the officers. We welcome students and faculty from mathematics, statistics, computer science, engineering, economics, physics, and neighbouring fields.",
       link: { href: `mailto:${site.email}`, label: site.email },
       extra: { href: "/contact/", label: "Contact form" },
     },
@@ -41,6 +42,7 @@ export function JoinSteps() {
     <ol className={styles.steps}>
       {steps.map((s, i) => (
         <Reveal as="li" key={s.title} index={i} className={styles.step}>
+          <Rule accent={i === 0} delay={i * 0.15} />
           <span className={styles.stepNum} aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
           <h3 className={styles.stepTitle}>{s.title}</h3>
           <p className={styles.stepBody}>{s.body}</p>
@@ -87,7 +89,9 @@ export function PageHead({ kicker, title, lede, children }: { kicker: string; ti
   return (
     <header className="container page-head">
       <p className="kicker">{kicker}</p>
-      <h1 className="page-title">{title}</h1>
+      <h1 className="page-title">
+        <RiseLines lines={[title]} />
+      </h1>
       {lede ? <p className="lede">{lede}</p> : null}
       {children}
     </header>

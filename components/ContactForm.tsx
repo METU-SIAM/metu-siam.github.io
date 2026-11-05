@@ -74,7 +74,7 @@ export function ContactForm({ email, formId, subject = "" }: { email: string; fo
           {!live
             ? `Opens your mail app with a message to ${email}.`
             : status === "sent"
-              ? "Thanks — your message was sent."
+              ? "Thanks, your message was sent."
               : status === "error"
                 ? `Something went wrong. Please write to ${email} directly.`
                 : ""}

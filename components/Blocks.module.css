@@ -1,7 +1,7 @@
 .steps {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
+  gap: 2.5rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -16,19 +16,16 @@
 .step {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
 }
 
 .stepNum {
-  font-family: var(--font-heading);
-  font-size: 2.4rem;
-  font-weight: 700;
+  margin-top: 1.25rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 2.6rem;
   line-height: 1;
   color: var(--blue);
-  opacity: 0.9;
+  font-variant-numeric: oldstyle-nums;
 }
 
 .stepTitle {

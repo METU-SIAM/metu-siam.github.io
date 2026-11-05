@@ -21,7 +21,7 @@ ${items
       <link>${SITE_URL}${e.href}</link>
       <guid isPermaLink="false">${e.kind}s/${e.slug}</guid>
       <pubDate>${new Date(e.sortKey).toUTCString()}</pubDate>
-      <description>${esc([e.speaker, e.affiliation].filter(Boolean).join(" · ") + (e.venue ? ` — ${e.venue}` : ""))}</description>
+      <description>${esc([e.speaker, e.affiliation].filter(Boolean).join(" · ") + (e.venue ? `. ${e.venue}` : ""))}</description>
     </item>`,
   )
   .join("\n")}

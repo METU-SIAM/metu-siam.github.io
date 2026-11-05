@@ -5,7 +5,7 @@ import { site } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Join",
-  description: "How to join the METU SIAM Student Chapter — SIAM membership, METU registration, and contacting the officers.",
+  description: "How to join the METU SIAM Student Chapter: SIAM membership, METU registration, and contacting the officers.",
 };
 
 export default function JoinPage() {
@@ -21,7 +21,7 @@ export default function JoinPage() {
         <section className="section" aria-labelledby="ask">
           <h2 id="ask" style={{ fontSize: "1.8rem" }}>Ask to join</h2>
           <p className="lede" style={{ marginBottom: "1.5rem" }}>
-            If you have already started the SIAM or campus paperwork — or you only want to be on the seminar list — send a
+            If you have already started the SIAM or campus paperwork, or you only want to be on the seminar list, send a
             short note.
           </p>
           <ContactForm email={site.email} formId={site.formspree_form_id ?? ""} subject="I would like to join METU SIAM" />

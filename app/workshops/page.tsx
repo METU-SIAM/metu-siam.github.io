@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHead } from "@/components/Blocks";
 import { EventListing } from "@/components/Events";
+import { Rule } from "@/components/Motion";
 import { Reveal } from "@/components/Reveal";
 import { pythonLectures, workshops } from "@/lib/content";
 import styles from "./workshops.module.css";
@@ -19,15 +20,17 @@ export default function WorkshopsPage() {
       <PageHead
         kicker="Short courses"
         title="Workshops"
-        lede="Hands-on sessions alongside the seminar series — programming, tools, and topics from the IAM programmes. Materials are linked from each listing when they are available."
+        lede="Hands-on sessions alongside the seminar series: programming, tools, and topics from the IAM programmes. Materials are linked from each listing when they are available."
       />
       <div className="container">
         <section id="python-lecture-series" className={styles.python} aria-labelledby="py-head">
+          <Rule accent className={styles.pyRule} />
           <div className={styles.pyHead}>
             <p className="kicker">{py.status === "ongoing" ? "Ongoing series" : "Series"}</p>
             <h2 id="py-head">{py.title}</h2>
-            <p className={styles.pyIntro}>{py.intro}</p>
           </div>
+          <div>
+            <p className={styles.pyIntro}>{py.intro}</p>
           {py.sessions.length ? (
             <ol className={styles.sessions}>
               {py.sessions.map((s, i) => {
@@ -45,6 +48,7 @@ export default function WorkshopsPage() {
           ) : (
             <p className={styles.pyEmpty}>Session titles and notes will appear here as the series is scheduled.</p>
           )}
+          </div>
         </section>
         <EventListing
           events={workshops}

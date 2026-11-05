@@ -36,10 +36,11 @@
 .field textarea {
   width: 100%;
   min-height: 46px;
-  padding: 0.65rem 0.85rem;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-sm);
-  background: var(--surface);
+  padding: 0.6rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--border-strong);
+  border-radius: 0;
+  background: transparent;
   color: var(--ink);
   font: inherit;
   font-size: 1rem;
@@ -54,7 +55,7 @@
 .field textarea:focus {
   outline: none;
   border-color: var(--blue);
-  box-shadow: 0 0 0 3px var(--blue-soft);
+  box-shadow: 0 1px 0 0 var(--blue);
 }
 
 .actions {

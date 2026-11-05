@@ -323,3 +323,34 @@ button {
     scroll-behavior: auto !important;
   }
 }
+
+/* --- editorial furniture (no cards) ---------------------------------------- */
+
+.section-head-x {
+  margin-bottom: 2rem;
+}
+
+.section-head-x__top {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  margin-bottom: 0.7rem;
+}
+
+.section-index {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--blue);
+  font-variant-numeric: oldstyle-nums;
+}
+
+.section-aside {
+  margin-left: auto;
+}
+
+.section-title {
+  margin-top: 1rem;
+  font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+  max-width: 24ch;
+}

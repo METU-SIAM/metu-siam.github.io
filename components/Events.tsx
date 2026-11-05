@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { addToCalendarUrl, countdown, formatLong, formatParts, isUpcoming, SITE_URL, type Event } from "@/lib/format";
 import { Icon } from "./Icon";
+import { Rule } from "./Motion";
 import { Reveal } from "./Reveal";
 import styles from "./Events.module.css";
 
@@ -32,7 +33,9 @@ export function FeaturedEvent({ event, label, now }: { event: Event; label?: str
   const cal = addToCalendarUrl(event, SITE_URL);
   const soon = isUpcoming(event, now) ? countdown(event.day, now) : null;
   return (
-    <article className={`${styles.featured} ${event.poster ? "" : styles.noPoster}`}>
+    <article className={styles.featured}>
+      <Rule accent />
+      <div className={`${styles.featuredGrid} ${event.poster ? "" : styles.noPoster}`}>
       {event.poster ? (
         <Link href={event.href} className={styles.posterLink} tabIndex={-1} aria-hidden="true">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -85,6 +88,7 @@ export function FeaturedEvent({ event, label, now }: { event: Event; label?: str
             </a>
           ) : null}
         </div>
+      </div>
       </div>
     </article>
   );

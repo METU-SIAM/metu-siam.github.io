@@ -8,7 +8,7 @@ import styles from "./resources.module.css";
 
 export const metadata: Metadata = {
   title: "Resources",
-  description: "Links for METU SIAM members — SIAM, IAM, campus registration, and chapter pages.",
+  description: "Links for METU SIAM members: SIAM, IAM, campus registration, and chapter pages.",
 };
 
 export default function ResourcesPage() {

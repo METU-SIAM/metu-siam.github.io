@@ -11,7 +11,7 @@ poster: poster.png
 series: 30
 kind: seminar
 layout: event
-description: Computational imaging, inverse problems, and reconstruction — Seminar Series 30.
+description: Computational imaging, inverse problems, and reconstruction. Seminar Series 30.
 ---
 
 Computational imaging is transforming how we capture and interpret visual

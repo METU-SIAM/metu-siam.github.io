@@ -2,32 +2,13 @@
 
 .featured {
   position: relative;
+}
+
+.featuredGrid {
   display: grid;
-  grid-template-columns: minmax(180px, 280px) minmax(0, 1fr);
-  gap: clamp(1.5rem, 4vw, 3rem);
-  padding: clamp(1.25rem, 3vw, 2.25rem);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background:
-    linear-gradient(135deg, var(--blue-soft), transparent 45%),
-    var(--surface);
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
-  transition: box-shadow var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out);
-}
-
-/* a thin rule along the top, like a journal masthead */
-.featured::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--blue), var(--gold));
-}
-
-.featured:hover {
-  border-color: var(--border-strong);
-  box-shadow: var(--shadow-md);
+  grid-template-columns: minmax(180px, 300px) minmax(0, 1fr);
+  gap: clamp(1.5rem, 5vw, 4rem);
+  padding-top: clamp(1.5rem, 3vw, 2.25rem);
 }
 
 .noPoster {
@@ -35,7 +16,7 @@
 }
 
 @media (max-width: 760px) {
-  .featured {
+  .featuredGrid {
     grid-template-columns: minmax(0, 1fr);
   }
 }
@@ -50,7 +31,7 @@
 }
 
 .featured:hover .posterLink {
-  transform: translateY(-3px);
+  transform: translateY(-4px) rotate(-1deg);
 }
 
 @media (max-width: 760px) {
@@ -228,9 +209,11 @@
 }
 
 .empty {
-  padding: 1.25rem 1.5rem;
-  border: 1px dashed var(--border-strong);
-  border-radius: var(--radius);
+  padding: 1rem 0;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
   color: var(--ink-muted);
 }
 
@@ -296,13 +279,7 @@
   grid-template-columns: 3.4rem 1.5rem minmax(0, 1fr) auto;
   align-items: start;
   gap: 0 0.75rem;
-  padding: 1.1rem 0.75rem 1.1rem 0;
-  border-radius: var(--radius-sm);
-  transition: background-color var(--dur-fast) var(--ease-out);
-}
-
-.row:hover {
-  background: var(--surface);
+  padding: 1.25rem 0;
 }
 
 .rowDate {

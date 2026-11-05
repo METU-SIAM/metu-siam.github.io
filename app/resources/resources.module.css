@@ -17,27 +17,33 @@
 }
 
 .list {
-  display: grid;
-  gap: 0.6rem;
   margin: 0;
   padding: 0;
   list-style: none;
+  border-top: 1px solid var(--border);
+}
+
+.list li {
+  border-bottom: 1px solid var(--border);
 }
 
 .item {
   display: grid;
   gap: 0.2rem;
-  padding: 0.9rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--surface);
+  padding: 0.9rem 0;
   text-decoration: none;
-  transition: border-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
 }
 
-.item:hover {
-  border-color: var(--blue);
-  transform: translateX(2px);
+.item svg {
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.item:hover .label {
+  color: var(--blue);
+}
+
+.item:hover svg {
+  transform: translate(3px, -1px);
 }
 
 .label {

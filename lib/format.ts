@@ -61,7 +61,7 @@ export function addToCalendarUrl(e: Event, siteUrl: string) {
   const d = e.day.replace(/-/g, "");
   const s = e.start_time.replace(":", "");
   const t = e.end_time.replace(":", "");
-  const text = `${e.title}${e.speaker ? ` — ${e.speaker}` : ""}`;
+  const text = `${e.title}${e.speaker ? ` (${e.speaker})` : ""}`;
   const q = new URLSearchParams({
     action: "TEMPLATE",
     text,

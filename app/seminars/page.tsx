@@ -5,7 +5,7 @@ import { seminars } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Seminars",
-  description: "Seminar series of the METU SIAM Student Chapter — upcoming talks and the archive.",
+  description: "Seminar series of the METU SIAM Student Chapter: upcoming talks and the archive.",
 };
 
 export default function SeminarsPage() {

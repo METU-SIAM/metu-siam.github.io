@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!e) return {};
   return {
     title: e.title,
-    description: e.description ?? `${e.speaker ?? ""} — METU SIAM workshop`,
+    description: e.description ?? `METU SIAM workshop${e.speaker ? ` by ${e.speaker}` : ""}`,
     openGraph: { title: e.title, description: e.description, images: e.poster ? [e.poster] : undefined },
   };
 }

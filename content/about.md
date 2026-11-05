@@ -1,13 +1,13 @@
 ---
 title: About
 layout: page
-description: METU SIAM Student Chapter — founded in 2004 at the Institute of Applied Mathematics, the first SIAM student chapter in Turkey.
+description: METU SIAM Student Chapter, founded in 2004 at the Institute of Applied Mathematics, the first SIAM student chapter in Turkey.
 ---
 
 The Society for Industrial and Applied Mathematics is the international
 professional society for applied mathematics and computational science.
 Student chapters exist so that interest in those subjects can live on a
-campus — talks, workshops, and a way to meet faculty and students from
+campus: talks, workshops, and a way to meet faculty and students from
 other departments.
 
 METU SIAM was founded in **2004** at the [Institute of Applied Mathematics]({{ site.data.site.links.iam_en }}).
@@ -18,8 +18,8 @@ industry, and to pass on career information.
 
 Activities include seminars, workshops, field trips, social events,
 competitions, and participation in SIAM meetings. The scientific home of the
-chapter is IAM’s four programmes — Actuarial Sciences, Cryptography, Financial
-Mathematics, and Scientific Computing — but membership is not limited to IAM.
+chapter is IAM’s four programmes (Actuarial Sciences, Cryptography, Financial
+Mathematics, and Scientific Computing), but membership is not limited to IAM.
 
 ## Aims of the chapter
 
