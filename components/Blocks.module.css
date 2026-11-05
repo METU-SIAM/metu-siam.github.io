@@ -1,0 +1,126 @@
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (max-width: 860px) {
+  .steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.stepNum {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--blue);
+  opacity: 0.9;
+}
+
+.stepTitle {
+  margin-top: 0.9rem;
+  font-size: 1.2rem;
+}
+
+.stepBody {
+  margin-top: 0.6rem;
+  color: var(--ink-muted);
+  flex: 1;
+}
+
+.stepLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-top: 1.1rem;
+}
+
+.stepLinks a {
+  overflow-wrap: anywhere;
+}
+
+.people {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.person {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
+}
+
+.person:hover {
+  border-color: var(--border-strong);
+}
+
+.avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+.personBody {
+  min-width: 0;
+}
+
+.personName {
+  font-size: 1.08rem;
+}
+
+.personRole {
+  margin-top: 0.15rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--gold);
+}
+
+.personAffil {
+  margin-top: 0.3rem;
+  font-size: 0.92rem;
+  color: var(--ink-muted);
+}
+
+.personLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.personLink:hover {
+  text-decoration: underline;
+}

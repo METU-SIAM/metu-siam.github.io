@@ -1,0 +1,35 @@
+{
+  "name": "metu-siam-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "predev": "node scripts/copy-content-assets.mjs",
+    "dev": "next dev --turbopack",
+    "prebuild": "node scripts/copy-content-assets.mjs",
+    "build": "next build",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "framer-motion": "^14.9.1",
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0",
+    "katex": "^0.17.0",
+    "next": "15.5.20",
+    "next-mdx-remote": "^5.0.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "rehype-katex": "^7.0.1",
+    "remark-gfm": "^4.0.0",
+    "remark-math": "^6.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.20",
+    "typescript": "^5"
+  }
+}

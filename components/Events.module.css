@@ -1,0 +1,245 @@
+.featured {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out);
+}
+
+.featured:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 720px) {
+  .featured {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.featuredTop {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dateline {
+  margin-top: 0.15rem;
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+}
+
+.featuredTitle {
+  margin-top: 1.1rem;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 600;
+}
+
+.featuredTitle a,
+.rowTitle a {
+  color: var(--ink);
+  text-decoration: none;
+  background-image: linear-gradient(var(--blue), var(--blue));
+  background-size: 0 1.5px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size var(--dur) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+
+.featuredTitle a:hover,
+.rowTitle a:hover {
+  color: var(--blue);
+  background-size: 100% 1.5px;
+}
+
+.speaker {
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.affil {
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+
+.venue {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+}
+
+.venue svg {
+  flex: none;
+  margin-top: 0.25rem;
+}
+
+.desc {
+  margin-top: 0.75rem;
+  max-width: 60ch;
+  color: var(--ink-muted);
+}
+
+.posterLink {
+  align-self: start;
+  display: block;
+  width: min(220px, 40vw);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transform: rotate(1.5deg);
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.featured:hover .posterLink {
+  transform: rotate(0deg) translateY(-3px);
+}
+
+@media (max-width: 720px) {
+  .posterLink {
+    width: 160px;
+    transform: none;
+  }
+}
+
+.poster {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* date block */
+
+.dateBlock {
+  flex: none;
+  display: grid;
+  justify-items: center;
+  width: 4.5rem;
+  padding: 0.55rem 0 0.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--navy);
+  color: var(--navy-ink);
+  font-family: var(--font-heading);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.dbDay {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.dbMonth {
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #e2a944;
+}
+
+.dbYear {
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  color: var(--navy-muted);
+}
+
+.dateCompact {
+  width: 3.75rem;
+  background: var(--surface-2);
+  color: var(--ink);
+}
+
+.dateCompact .dbDay {
+  font-size: 1.35rem;
+}
+
+.dateCompact .dbMonth {
+  color: var(--gold);
+}
+
+.dateCompact .dbYear {
+  color: var(--ink-faint);
+}
+
+/* listing */
+
+.listHead {
+  margin-bottom: 1.25rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.featuredList {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.empty {
+  padding: 1.25rem 1.5rem;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  color: var(--ink-muted);
+}
+
+.year + .year {
+  margin-top: 2rem;
+}
+
+.yearHead {
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+}
+
+.rows {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.rowTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.rowMeta {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--ink-faint);
+}
+
+.rowPoster {
+  width: 72px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 560px) {
+  .row {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .rowPoster {
+    display: none;
+  }
+}
