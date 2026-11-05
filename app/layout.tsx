@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Rubik } from "next/font/google";
+import { Outfit, Rubik, Source_Serif_4 } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { site, SITE_URL } from "@/lib/content";
@@ -7,6 +7,7 @@ import "katex/dist/katex.min.css";
 import "./globals.css";
 
 const outfit = Outfit({ subsets: ["latin", "latin-ext"], variable: "--font-outfit", display: "swap" });
+const serif = Source_Serif_4({ subsets: ["latin", "latin-ext"], variable: "--font-source-serif", display: "swap", style: ["normal", "italic"] });
 const rubik = Rubik({ subsets: ["latin", "latin-ext"], variable: "--font-rubik", display: "swap" });
 
 const description =
@@ -30,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>
-      <body className={`${outfit.variable} ${rubik.variable}`}>
+      <body className={`${outfit.variable} ${rubik.variable} ${serif.variable}`}>
         <a className="skip-link" href="#main">Skip to content</a>
         <Header />
         <main id="main">{children}</main>

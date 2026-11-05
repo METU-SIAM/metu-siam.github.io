@@ -55,72 +55,42 @@
 
 .people {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0 2rem;
   margin: 0;
   padding: 0;
   list-style: none;
+  border-top: 1px solid var(--border);
 }
 
 .person {
-  display: flex;
-  gap: 1rem;
-  padding: 1.25rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
-  transition: border-color var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
-}
-
-.person:hover {
-  border-color: var(--border-strong);
-}
-
-.avatar {
-  flex: none;
-  display: grid;
-  place-items: center;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 999px;
-  background: var(--blue-soft);
-  color: var(--blue);
-  font-family: var(--font-heading);
-  font-weight: 600;
-}
-
-.personBody {
-  min-width: 0;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
 }
 
 .personName {
   font-size: 1.08rem;
+  font-weight: 600;
+}
+
+.personName a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.personName a:hover {
+  color: var(--blue);
+  text-decoration: underline;
 }
 
 .personRole {
   margin-top: 0.15rem;
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 0.92rem;
   color: var(--gold);
 }
 
 .personAffil {
-  margin-top: 0.3rem;
+  margin-top: 0.1rem;
   font-size: 0.92rem;
   color: var(--ink-muted);
-}
-
-.personLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  overflow-wrap: anywhere;
-  text-decoration: none;
-}
-
-.personLink:hover {
-  text-decoration: underline;
 }

@@ -51,6 +51,11 @@
 }
 
 .heroTitle span {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.42em;
+  font-weight: 500;
+  letter-spacing: -0.01em;
   color: #8cc3f0;
 }
 

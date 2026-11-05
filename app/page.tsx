@@ -50,15 +50,15 @@ export default function Home() {
           </Reveal>
           <Reveal index={1}>
             <h1 className={styles.heroTitle}>
-              Mathematics
-              <br />
-              <span>that moves.</span>
+              METU SIAM
+              <span>Student Chapter</span>
             </h1>
           </Reveal>
           <Reveal index={2}>
             <p className={styles.heroLede}>
-              The METU chapter of SIAM: a student community for applied mathematics, scientific computing, and
-              neighbouring fields. Seminars and workshops at IAM since {site.founded}.
+              Society for Industrial and Applied Mathematics at Middle East Technical University. A student chapter
+              for applied mathematics, scientific computing, and neighbouring fields, with seminars and workshops at
+              the Institute of Applied Mathematics since {site.founded}.
             </p>
           </Reveal>
           <Reveal index={3}>

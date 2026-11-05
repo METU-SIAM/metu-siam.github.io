@@ -24,6 +24,8 @@ export type Event = {
   description?: string;
   status?: "upcoming" | "past";
   body: string;
+  /** the abstract's opening, as plain text */
+  excerpt?: string;
 };
 
 const TZ = "Europe/Istanbul";
@@ -69,6 +71,14 @@ export function addToCalendarUrl(e: Event, siteUrl: string) {
     details: `${siteUrl}${e.href}`,
   });
   return `https://calendar.google.com/calendar/render?${q.toString()}`;
+}
+
+/** "Today", "Tomorrow", "In 5 days", or null once the day has passed. */
+export function countdown(day: string, now: Date) {
+  const today = new Intl.DateTimeFormat("en-CA", { timeZone: TZ }).format(now);
+  const d = Math.round((Date.parse(`${day}T00:00:00Z`) - Date.parse(`${today}T00:00:00Z`)) / 86400000);
+  if (d < 0) return null;
+  return d === 0 ? "Today" : d === 1 ? "Tomorrow" : `In ${d} days`;
 }
 
 export const SITE_URL = "https://metu-siam.github.io";

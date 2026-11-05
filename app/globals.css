@@ -26,6 +26,8 @@
   --header-h: 68px;
   --font-heading: var(--font-outfit), "Outfit", system-ui, sans-serif;
   --font-body: var(--font-rubik), "Rubik", system-ui, sans-serif;
+  /* talk titles: the one academic serif on the site */
+  --font-serif: var(--font-source-serif), "Source Serif 4", Georgia, serif;
   /* motion tokens */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --dur-fast: 160ms;

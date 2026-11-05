@@ -76,6 +76,20 @@ function toDay(value: unknown): string | null {
 /** Istanbul has been UTC+3 all year since 2016. */
 const at = (day: string, hhmm: string) => new Date(`${day}T${hhmm}:00+03:00`).toISOString();
 
+/** The first paragraph of the abstract without Markdown, cut at about 260 characters. */
+function excerpt(md: string) {
+  const para = md.trim().split(/\n\s*\n/)[0] ?? "";
+  const text = para
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/[*_`#>$]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!text) return undefined;
+  if (text.length <= 260) return text;
+  return text.slice(0, text.lastIndexOf(" ", 260)) + "…";
+}
+
 function readEvents(kind: Kind): Event[] {
   const dir = path.join(ROOT, kind === "seminar" ? "seminars" : "workshops");
   if (!fs.existsSync(dir)) return [];
@@ -111,6 +125,7 @@ function readEvents(kind: Kind): Event[] {
       description: data.description,
       status: data.status,
       body: content.trim(),
+      excerpt: excerpt(content),
     });
   }
   return out.sort((a, b) => a.sortKey.localeCompare(b.sortKey));

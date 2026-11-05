@@ -60,35 +60,23 @@ export function JoinSteps() {
   );
 }
 
-const initials = (name: string) =>
-  name
-    .split(/\s+/)
-    .filter((w) => /^\p{L}/u.test(w))
-    .map((w) => w[0])
-    .filter((_, i, a) => i === 0 || i === a.length - 1)
-    .join("");
-
-export function PeopleGrid({ people, sponsors = false }: { people: Person[]; sponsors?: boolean }) {
+/** A plain list: name, then role and affiliation. Sponsors link to their site. */
+export function PeopleGrid({ people }: { people: Person[] }) {
   return (
     <ul className={styles.people}>
       {people.map((p, i) => (
         <Reveal as="li" key={p.name} index={i} className={styles.person}>
-          {!sponsors ? <span className={styles.avatar} aria-hidden="true">{initials(p.name)}</span> : null}
-          <div className={styles.personBody}>
-            <h3 className={styles.personName}>{p.name}</h3>
-            <p className={styles.personRole}>{p.role}</p>
-            {p.affiliation ? <p className={styles.personAffil}>{p.affiliation}</p> : null}
-            {p.email ? (
-              <a className={styles.personLink} href={`mailto:${p.email}`}>
-                <Icon name="mail" size={14} /> {p.email}
-              </a>
-            ) : null}
+          <h3 className={styles.personName}>
             {p.url ? (
-              <a className={styles.personLink} href={p.url} rel="noopener noreferrer">
-                <Icon name="external" size={14} /> {p.url.replace(/^https?:\/\//, "")}
+              <a href={p.url} rel="noopener noreferrer">
+                {p.name}
               </a>
-            ) : null}
-          </div>
+            ) : (
+              p.name
+            )}
+          </h3>
+          <p className={styles.personRole}>{p.role}</p>
+          {p.affiliation ? <p className={styles.personAffil}>{p.affiliation}</p> : null}
         </Reveal>
       ))}
     </ul>

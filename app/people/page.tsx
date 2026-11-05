@@ -35,7 +35,7 @@ export default function PeoplePage() {
               <h2 id={g.key}>{g.title}</h2>
               <p>{g.sub}</p>
             </header>
-            <PeopleGrid people={people[g.key]} sponsors={g.key === "sponsors"} />
+            <PeopleGrid people={people[g.key]} />
           </section>
         ))}
       </div>

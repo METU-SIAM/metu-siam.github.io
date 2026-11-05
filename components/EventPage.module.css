@@ -35,8 +35,10 @@
 
 .title {
   margin-top: 0.75rem;
+  font-family: var(--font-serif);
   font-size: clamp(2rem, 4.5vw, 3rem);
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: -0.015em;
 }
 
 .speaker {
