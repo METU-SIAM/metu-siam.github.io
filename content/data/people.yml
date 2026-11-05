@@ -24,27 +24,21 @@ student_officers:
   - name: Eylem Bahadır
     role: Chapter President
     affiliation: METU SIAM Student Chapter
-    email: eylemb@metu.edu.tr
   - name: Şükrü Çelenkoğlu
     role: Vice President
     affiliation: METU SIAM Student Chapter
-    email: sukru.celenkoglu@metu.edu.tr
   - name: İlkyaz Aslanöz
     role: Secretary
     affiliation: METU SIAM Student Chapter
-    email: ilkyaz@metu.edu.tr
   - name: Eren İsmail Gülay
     role: Treasurer
     affiliation: METU SIAM Student Chapter
-    email: eren.gulay@metu.edu.tr
   - name: Beyza Avan
     role: Officer
     affiliation: METU SIAM Student Chapter
-    email: beyzavan@metu.edu.tr
   - name: Sude Genç
     role: Webmaster
     affiliation: METU SIAM Student Chapter
-    email: sude.genc@metu.edu.tr
 
 sponsors:
   - name: Institute of Applied Mathematics
